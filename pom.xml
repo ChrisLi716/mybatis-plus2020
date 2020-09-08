@@ -70,6 +70,13 @@
             <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
             <version>${dynamic.datasource.version}</version>
         </dependency>
+
+        <!--引入自定义springboot-starter模块-->
+        <dependency>
+            <groupId>com.chris</groupId>
+            <artifactId>helloworld-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

@@ -32,3 +32,9 @@ logging:
     root: info
     # 数据查询接口级别
     com.chris.mybatisplus.dao.mapper: debug
+
+
+helloworld:
+  chris:
+    prefix: My name is
+    suffix: Say hello to the world!
