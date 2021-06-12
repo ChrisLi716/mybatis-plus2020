@@ -20,13 +20,10 @@ public class VisiableThreadPoolTaskExecutor extends ThreadPoolTaskExecutor {
     private void showThreadPoolInfo(String prefix) {
         ThreadPoolExecutor threadPoolExecutor = getThreadPoolExecutor();
 
-        log.info("{}, {},taskCount [{}], completedTaskCount [{}], activeCount [{}], queueSize [{}]",
-                this.getThreadNamePrefix(),
-                prefix,
-                threadPoolExecutor.getTaskCount(),
-                threadPoolExecutor.getCompletedTaskCount(),
-                threadPoolExecutor.getActiveCount(),
-                threadPoolExecutor.getQueue().size());
+        log.info("{}, {},taskCount [{}], completedTaskCount [{}], activeCount [{}], queueSize [{}], maxPoolSize [{}]"
+                , this.getThreadNamePrefix(), prefix, threadPoolExecutor.getTaskCount(),
+                threadPoolExecutor.getCompletedTaskCount(), threadPoolExecutor.getActiveCount(),
+                threadPoolExecutor.getQueue().size(), threadPoolExecutor.getMaximumPoolSize());
     }
 
     @Override
