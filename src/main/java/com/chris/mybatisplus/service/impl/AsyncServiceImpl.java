@@ -1,6 +1,5 @@
 package com.chris.mybatisplus.service.impl;
 
-import ch.qos.logback.core.util.TimeUtil;
 import com.chris.mybatisplus.service.IAsyncService;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;

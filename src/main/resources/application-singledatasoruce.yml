@@ -2,13 +2,11 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://192.168.140.127:3306/chris?allowMultiQueries=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=CTT
-#    username: root
-#    password: 65536
+    url: jdbc:mysql://192.168.101.127:3306/chris?allowMultiQueries=true&useSSL=false&useUnicode=true
+    &characterEncoding=UTF-8&serverTimezone=CTT
+    username: root
+    password: 65536
 
-    url: jdbc:mysql://10.176.230.130:33066/ipd_freq_core?useSSL=false&serverTimezone=Asia/Shanghai&allowMultiQueries=true
-    username: ipdmgr
-    password: 6699
     druid:
       #初始化时建立物理连接的个数
       initial-size: 5

@@ -10,6 +10,7 @@ spring:
     name: mybatis-plus2020
   profiles:
     active: multidatasource
+#    active: singledatasource
 
 
 mybatis-plus:

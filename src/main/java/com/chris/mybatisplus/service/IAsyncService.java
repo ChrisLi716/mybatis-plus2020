@@ -1,8 +1,5 @@
 package com.chris.mybatisplus.service;
 
-import lombok.SneakyThrows;
-import org.springframework.scheduling.annotation.Async;
-
 import java.util.concurrent.Future;
 
 /**
