@@ -4,10 +4,12 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.chris.mybatisplus.dto.Encrypt;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
+import org.apache.ibatis.type.JdbcType;
 
 import java.util.Date;
 
@@ -44,8 +46,8 @@ public class User {
 
     private Integer age;
     private Date bir;
-    private String phone;
     private String address;
+    private String phone;
 
     // 不映射数据表中的任何字段
     @TableField(exist = false)

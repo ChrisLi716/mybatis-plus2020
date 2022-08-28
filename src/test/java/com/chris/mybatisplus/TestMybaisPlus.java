@@ -74,22 +74,6 @@ public class TestMybaisPlus {
         System.out.println("insert user account:" + i);
     }
 
-
-    //写入一条记录，并对phone字段加密
-    @Test
-    public void testInsertEncrypt() {
-        int encrypt = userMapper.addUser("cl", 23, new Date(), new Encrypt("1234454556"), "US");
-        System.out.println("insert user account:" + encrypt);
-    }
-
-    //查询phone对应的用户信息
-    @Test
-    public void findUserByPhone() {
-        List<User> usersByPhone = userMapper.findUsersByPhone(new Encrypt("1234454556"));
-        System.out.println("usersByPhone:" + JSONUtil.toJsonStr(usersByPhone));
-    }
-
-
     //写入一批记录
     @Test
     public void testInsert2() {
@@ -153,6 +137,5 @@ public class TestMybaisPlus {
         int i = userMapper.delete(updateWrapper);
         System.out.println("delete user account:" + i);
     }
-
 
 }
