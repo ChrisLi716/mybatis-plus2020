@@ -1,9 +1,8 @@
-package com.chris.mybatis;
+package com.chris.mybatisplus;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.chris.mybatisplus.MybatisPlusMain;
 import com.chris.mybatisplus.dao.mapper.UserMapper;
 import com.chris.mybatisplus.entities.User;
 import org.junit.jupiter.api.Test;

@@ -26,6 +26,8 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   #为所有Entity类所在包起默认别名
   type-aliases-package: com.chris.mybatisplus.entities
+  #配置文件中指定Typehandler的包路径
+  type-handlers-package: com.chris.mybatisplus.handler
 
 logging:
   level:

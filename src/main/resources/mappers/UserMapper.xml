@@ -3,19 +3,22 @@
 <mapper namespace="com.chris.mybatisplus.dao.mapper.UserMapper">
 
     <resultMap id="BaseResultMapper" type="com.chris.mybatisplus.entities.User">
-        <id column="tableId" property="id"/>
+        <id column="id" property="id"/>
         <result column="name" property="name"/>
         <result column="age" property="age"/>
         <result column="bir" property="bir"/>
-        <result column="phone" property="phone" typeHandler="com.chris.mybatisplus.handler.EncryptTypeHandler"/>
+        <result column="phone" property="phone"/>
     </resultMap>
 
-    <insert id="addCustomer">
-        insert into customer(phone,address) values (#{phone},#{address})
+    <insert id="addUser">
+        insert into t_user(name, age, bir, phone, address)
+        values (#{name}, #{age}, #{bir}, #{phone}, #{address})
     </insert>
 
-    <select id="findCustomer" resultMap="BaseResultMapper">
-        select * from customer where phone = #{phone}
+    <select id="findUsersByPhone" resultMap="BaseResultMapper">
+        select *
+        from t_user
+        where phone = #{phone}
     </select>
 
 </mapper>

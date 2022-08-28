@@ -1,12 +1,11 @@
-package com.chris.mybatis;
+package com.chris.mybatisplus;
 
-import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.RandomUtil;
+import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.chris.mybatisplus.MybatisPlusMain;
 import com.chris.mybatisplus.dao.mapper.UserMapper;
+import com.chris.mybatisplus.dto.Encrypt;
 import com.chris.mybatisplus.entities.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.security.SecureRandom;
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @SpringBootTest(classes = MybatisPlusMain.class)
 public class TestMybaisPlus {
@@ -71,8 +69,24 @@ public class TestMybaisPlus {
         user.setAge(21);
         user.setBir(new Date());
         user.setName("Smith");
+        user.setPhone("1234454556");
         int i = userMapper.insert(user);
         System.out.println("insert user account:" + i);
+    }
+
+
+    //写入一条记录，并对phone字段加密
+    @Test
+    public void testInsertEncrypt() {
+        int encrypt = userMapper.addUser("cl", 23, new Date(), new Encrypt("1234454556"), "US");
+        System.out.println("insert user account:" + encrypt);
+    }
+
+    //查询phone对应的用户信息
+    @Test
+    public void findUserByPhone() {
+        List<User> usersByPhone = userMapper.findUsersByPhone(new Encrypt("1234454556"));
+        System.out.println("usersByPhone:" + JSONUtil.toJsonStr(usersByPhone));
     }
 
 
@@ -139,7 +153,6 @@ public class TestMybaisPlus {
         int i = userMapper.delete(updateWrapper);
         System.out.println("delete user account:" + i);
     }
-
 
 
 }

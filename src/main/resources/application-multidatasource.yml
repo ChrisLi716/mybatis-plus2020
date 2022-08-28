@@ -50,11 +50,11 @@ spring:
       datasource:
         #配置了两个数据源
         master:
-          url: jdbc:mysql://192.168.101.127:3306/chris?allowMultiQueries=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=CTT
+          url: jdbc:mysql://192.168.101.127:3306/chris?allowMultiQueries=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8
           username: root
           password: 65536
         cluster:
-          url: jdbc:mysql://192.168.101.127:3306/slave01?allowMultiQueries=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=CTT
+          url: jdbc:mysql://192.168.101.127:3306/mysql?allowMultiQueries=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8
           username: root
           password: 65536
           driverClassName: com.mysql.cj.jdbc.Driver

@@ -13,8 +13,8 @@ import java.util.Date;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 @Accessors(chain = true)
+@NoArgsConstructor
 @TableName("t_user") //在不配置的情况下默认表名与类名一致
 public class User {
 
@@ -31,7 +31,7 @@ public class User {
      * ASSIGN_ID:分配ID，主键类型为Number(Integer和Long)使用接口IdentifierGenerator的nextId方法（默认实现类为DefaultIdentifierGenerator雪花算法）
      * ASSIGN_UUID:分配UUID，主键类型为String,使用接口IdentifierGenerator的nextId方法（默认default方法）
      */
-    @TableId(value = "tableId", type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     /**
@@ -39,11 +39,13 @@ public class User {
      * 如果列名和属性名一致可以不用配置此注解
      */
 
-    @TableField("last_name")
+    @TableField("name")
     private String name;
+
     private Integer age;
     private Date bir;
     private String phone;
+    private String address;
 
     // 不映射数据表中的任何字段
     @TableField(exist = false)
