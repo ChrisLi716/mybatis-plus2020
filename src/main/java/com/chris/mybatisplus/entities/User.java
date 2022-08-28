@@ -43,6 +43,7 @@ public class User {
     private String name;
     private Integer age;
     private Date bir;
+    private String phone;
 
     // 不映射数据表中的任何字段
     @TableField(exist = false)
